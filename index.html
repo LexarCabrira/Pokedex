@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex Viewer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="loader-overlay">
+        <div class="pokeball-rotator"></div>
+        <div class="loader-door top"></div>
+        <div class="loader-door bottom"></div>
+        <div id="shine-effect"></div>
+    </div>
+
+    <div id="pokedex-container" class="pokedex-container">
+      
+      <div class="top-nav-container">
+          <div class="top-nav" id="top-nav"></div>
+      </div>
+      
+      <div class="info-panel content-wrapper">
+          <div class="info-panel-3d-wrapper">
+            <div>
+              <id id="pokemon-id">#000</id>
+              <h1 id="pokemon-name">Loading...</h1>
+            </div>
+            <div class="details-grid">
+              <span class="detail-label">Height</span>
+              <div id="pokemon-height" class="detail-value">---</div>
+              <span class="detail-label">Weight</span>
+              <div id="pokemon-weight" class="detail-value">---</div>
+              <span class="detail-label">Type</span>
+              <div id="pokemon-types" class="detail-value tag-container"></div>
+            </div>
+            <div class="button-container">
+                <button class="btn btn-team-builder">Team Builder</button>
+            </div>
+          </div>
+      </div>
+      
+      <div class="sprite-panel content-wrapper">
+          <div id="japanese-name"></div>
+          <img id="pokemon-sprite" src="" alt="Pokémon Sprite">
+          <img id="pokemon-sprite-next" src="" alt="Next Pokémon Sprite">
+          <button class="btn btn-add">Add to Team</button>
+          <div class="team-slots-container">
+              <div class="team-slot"></div>
+              <div class="team-slot"></div>
+              <div class="team-slot"></div>
+              <div class="team-slot"></div>
+              <div class="team-slot"></div>
+              <div class="team-slot"></div>
+          </div>
+      </div>
+      
+      <div class="search-container content-wrapper">
+            <form id="search-form" class="search-form">
+              <input type="text" id="name-input" placeholder="Search Pokémon name">
+              <button type="submit">Go!</button>
+            </form>
+      </div>
+      
+      <div class="number-list-container">
+          <div id="up-arrow" class="arrow">^</div>
+          <ul id="pokemon-number-list"></ul>
+          <div id="down-arrow" class="arrow">v</div>
+      </div>
+
+    </div>
+
+    <!-- Team Builder View (Initially Hidden) -->
+    <div id="team-builder-view" class="team-builder-view">
+        <!-- The new teambuilder UI will be injected here by JavaScript -->
+    </div>
+    
+    <div id="mute-button"><i class="fas fa-volume-off"></i></div>
+    <audio id="bgm-audio" loop></audio>
+    <audio id="click-audio" src="https://vgmsite.com/soundtracks/pokemon-game-boy-sound-collection/vmnzfyua/111-sfx-menu-select.mp3"></audio>
+
+    <!-- Custom Alert Modal -->
+    <div id="custom-alert-overlay" class="custom-alert-overlay">
+        <div class="custom-alert-box">
+            <p id="custom-alert-message"></p>
+            <button id="custom-alert-ok-btn">OK</button>
+        </div>
+    </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
